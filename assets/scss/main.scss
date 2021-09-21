@@ -2,7 +2,7 @@
     font-family: "Inter var";
     font-weight: 100 900;
     font-style: normal;
-    font-named-instance: "Regular";
+    // font-named-instance: "Regular";
     // sorry to steal this font like that, but it's the only one I could find
     src:
         url(~assets/fonts/Inter/Inter-roman.woff2)
@@ -24,7 +24,6 @@
     }
 }
 
-html,
 body {
     margin: 0;
     padding: 0;
@@ -35,12 +34,15 @@ button {
 }
 
 html {
+    margin: 0;
+    padding: 0;
     font-size: 16px;
     font-variant: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
+    min-height: 100%;
 }
 
 #background-radial-gradient {
@@ -56,9 +58,6 @@ html {
     z-index: -1;
 }
 
-html {
-    min-height: 100%;
-}
 
 @media (prefers-color-scheme: dark) {
     html {
