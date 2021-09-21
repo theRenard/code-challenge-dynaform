@@ -1,14 +1,15 @@
-const express = require('express')
+import express from 'express';
+import hello from './hello';
+
 const app = express()
 
-const hello = require('./hello')
 app.use(hello)
 
 if (require.main === module) {
-  const port = 3001
+  const port = process.env.PORT || 3000;
   app.listen(port, () => {
     console.log(`API server listening on port ${port}`)
   })
 }
 
-module.exports = app
+export default app;
