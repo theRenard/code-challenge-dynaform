@@ -18,8 +18,16 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '~/assets/scss/main.scss'
   ],
+
+  styleResources: {
+    scss: [
+      '~/assets/scss/vars/*.scss',
+      '~/assets/scss/abstracts/_mixins.scss' // use underscore "_" & also file extension ".scss"
+      ]
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -31,6 +39,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/style-resources',
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
@@ -52,6 +61,12 @@ export default {
   pwa: {
     manifest: {
       lang: 'en'
+    }
+  },
+
+  extend(config, ctx) {
+    if (ctx.isDev) {
+      config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map';
     }
   },
 

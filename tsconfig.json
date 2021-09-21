@@ -3,6 +3,8 @@
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
+    "jsx": "preserve",
+    "jsxFactory": "h",
     "lib": [
       "ESNext",
       "ESNext.AsyncIterable",
@@ -26,6 +28,7 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
+      "@nuxt/content",
       "@types/node"
     ]
   },
