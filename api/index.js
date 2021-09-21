@@ -1,15 +1,16 @@
-import express from 'express';
-import hello from './hello';
+const express = require('express')
 
+// Create express instnace
 const app = express()
 
-app.use(hello)
+// Require API routes
+const users = require('./routes/users')
 
-if (require.main === module) {
-  const port = process.env.PORT || 3000;
-  app.listen(port, () => {
-    console.log(`API server listening on port ${port}`)
-  })
+// Import API Routes
+app.use(users)
+
+// Export the server middleware
+module.exports = {
+  path: '/api',
+  handler: app
 }
-
-export default app;
