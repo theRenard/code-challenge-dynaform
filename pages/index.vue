@@ -1,9 +1,17 @@
 <template>
-  <Tutorial/>
+  <div class="dynaform">
+    <Form-Container />
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 
-export default Vue.extend({})
+import { Vue, Component } from 'nuxt-property-decorator';
+
+@Component
+export default class IndexPage extends Vue {
+  mounted(): void {
+    this.$store.dispatch('fetchSchema');
+  }
+}
 </script>
