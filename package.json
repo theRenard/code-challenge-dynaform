@@ -11,7 +11,9 @@
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
     "prepare": "husky install",
     "lint": "yarn lint:js && yarn lint:style",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "e2e": "cypress open --browser chrome",
+    "e2e:silent": "cypress run"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -36,6 +38,7 @@
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/style-resources": "^1.2.1",
     "@nuxtjs/stylelint-module": "^4.0.0",
+    "cypress": "^8.4.1",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
