@@ -1,0 +1,9 @@
+{
+  "name":"DATE",
+  "fields":[
+      {
+          "name":"birth_date",
+          "type": "Date"
+      }
+  ]
+}

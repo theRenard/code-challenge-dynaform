@@ -1,0 +1,9 @@
+{
+  "name":"NUMBER",
+  "fields":[
+      {
+          "name":"age",
+          "type": "Number"
+      }
+  ]
+}

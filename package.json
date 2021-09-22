@@ -13,7 +13,7 @@
     "lint": "yarn lint:js && yarn lint:style",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "e2e": "cypress open --browser chrome",
-    "e2e:silent": "cypress run"
+    "e2e:silent": "start-server-and-test serve http://localhost:3000 cypress:run"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -51,6 +51,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint-scss": "^3.21.0",
+    "start-server-and-test": "^1.12.0"
   }
 }

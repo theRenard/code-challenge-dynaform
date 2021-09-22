@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="label" :rules="rules" :prop="name">
+  <el-form-item :data-cy-name="name" :data-cy-type="component" :label="label" :rules="rules" :prop="name">
     <component
       :is="component"
       v-model="model"

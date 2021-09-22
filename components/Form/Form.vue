@@ -3,7 +3,6 @@
     <Form-Input
       v-for="schema of inputSchemas"
       :key="schema.name"
-      :form="form"
       :schema="schema"
       @input="inputHandler" />
     <el-form-item size="large">

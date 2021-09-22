@@ -1,0 +1,9 @@
+{
+  "name":"STRING",
+  "fields":[
+      {
+          "name":"first_name",
+          "type": "String"
+      }
+  ]
+}

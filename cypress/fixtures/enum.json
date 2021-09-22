@@ -1,0 +1,9 @@
+{
+  "name":"ENUM",
+  "fields":[
+      {
+          "name":"gender",
+          "type": "GenderEnum('M','F')"
+      }
+  ]
+}
