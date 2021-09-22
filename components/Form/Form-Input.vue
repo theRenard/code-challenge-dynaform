@@ -1,8 +1,9 @@
 <template>
-  <el-form-item :label="label">
+  <el-form-item :label="label" :rules="rules" :prop="name">
     <component
       :is="component"
-      v-model="model">
+      v-model="model"
+      @change="inputHandler">
       <template v-if="isSelect">
         <el-option
           v-for="option in value"
@@ -18,7 +19,7 @@
 
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import { InputFieldSchema } from '~/types';
-import { fieldToInputMap } from "~/utils/index";
+import { fieldToInputMap, getRulesForFieldSchema } from "~/utils/index";
 
 @Component
 export default class FormInput extends Vue {
@@ -35,6 +36,10 @@ export default class FormInput extends Vue {
     return this.schema.label;
   }
 
+  get name() {
+    return this.schema.name;
+  }
+
   get value() {
     return this.schema.value;
   }
@@ -45,7 +50,13 @@ export default class FormInput extends Vue {
   })
   public schema!: InputFieldSchema;
 
-  model = '';
+  model = this.schema.type === fieldToInputMap.Number ? 0 : '';
+
+  rules = getRulesForFieldSchema(this.schema.type);
+
+  inputHandler(value: string) {
+    this.$emit('input', { value, name: this.name });
+  }
 
 }
 

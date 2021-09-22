@@ -55,3 +55,23 @@ export function fieldSchemaToInputSchema(fieldSchema: FormFieldSchema): InputFie
 
   return inputFieldSchema;
 }
+
+export function stringValidator(_rule: any, value: string, callback: Function) {
+  const valueToNumber = Number(value);
+  const isNaN = Number.isNaN(valueToNumber);
+  if (!isNaN) {
+    callback(new Error('Is a number!'));
+  } else {
+    callback();
+  }
+}
+
+export function getRulesForFieldSchema(type: InputFieldSchema['name']) {
+  if (type === fieldToInputMap.String) {
+    return [
+      { required: true, message: 'Required field', trigger: 'blur' },
+      { validator: stringValidator, message: 'Wrong type, this should not be a number', trigger: 'blur' },
+    ]
+  }
+  return null;
+};
