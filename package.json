@@ -12,6 +12,7 @@
     "prepare": "husky install",
     "lint": "yarn lint:js && yarn lint:style",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "serve": "nuxt generate && nuxt start --port 3000",
     "e2e": "cypress open --browser chrome",
     "e2e:silent": "start-server-and-test serve http://localhost:3000 cypress:run"
   },
